@@ -34,7 +34,7 @@ class ProductController extends Controller
         return view('main', compact('products', 'cart', 'isFavorite'));
     }
 
-        /**
+    /**
      * Add a product to the cart.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -47,17 +47,16 @@ class ProductController extends Controller
 
         $cart = $request->session()->get('cart', []);
 
-        if (array_key_exists($product->id, $cart))
-        {
+        if (array_key_exists($product->id, $cart)) {
             $cart[$product->id]['quantity']++;
         } else {
-                    $cart[$product->id] = [
-            'id' => $product->id,
-            'name' => $product->name,
-            'price' => $product->price,
-            'discount' => $product->discount,
-            'quantity' => 1,
-        ];
+            $cart[$product->id] = [
+                'id' => $product->id,
+                'name' => $product->name,
+                'price' => $product->price,
+                'discount' => $product->discount,
+                'quantity' => 1,
+            ];
         }
 
         $request->session()->put('cart', $cart);
@@ -74,7 +73,17 @@ class ProductController extends Controller
      */
     public function update_cart(Request $request, $id)
     {
+        if ($request->input('quantity') < 0) {
+            return redirect()->back();
+        }
+
         $cart = $request->session()->get('cart', []);
+
+        if ($request->input('quantity') == 0) {
+            unset($cart[$id]);
+            $request->session()->put('cart', $cart);
+            return redirect()->back();
+        }
 
         $cart[$id]['quantity'] = $request->input('quantity');
 
@@ -83,7 +92,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-        public function remove_from_cart(Request $request, $id)
+    public function remove_from_cart(Request $request, $id)
     {
         $cart = $request->session()->get('cart', []);
 
