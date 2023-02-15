@@ -4,11 +4,11 @@ Must say that I had really great time, was really nice to write in PHP and getti
 ### Requirements:
  - PHP Version 8+
  - Laravel version 9+ (Not the installer)
- - MySQL with credantials.
+ - MySQL with credentials.
 ### How to run:
  - Download the repository
  - install all the of the repositories packages by "composer install"
- - Create a .env followed by .env.example file and set up your mysql credantials, ip & port.
+ - Create a .env followed by .env.example file and set up your mysql credentials, ip & port.
  - Run command "php artisan key:generate" to generate a key
  - Run "php artisan migrate" to migrate with the database
  - Run "php artisan serve" to start the project's server
