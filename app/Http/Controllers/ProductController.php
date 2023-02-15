@@ -73,13 +73,9 @@ class ProductController extends Controller
      */
     public function update_cart(Request $request, $id)
     {
-        if ($request->input('quantity') < 0) {
-            return redirect()->back();
-        }
-
         $cart = $request->session()->get('cart', []);
 
-        if ($request->input('quantity') == 0) {
+        if ($request->input('quantity') <= 0) {
             unset($cart[$id]);
             $request->session()->put('cart', $cart);
             return redirect()->back();
