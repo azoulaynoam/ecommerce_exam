@@ -17,4 +17,4 @@ Must say that I had really great time, was really nice to write in PHP and getti
     - Home: /
     - Excel Import: /import
  
- Thank you very much for your time :D
+ Thank you for your consideration :)
