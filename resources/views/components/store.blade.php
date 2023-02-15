@@ -5,6 +5,7 @@
                 align-items: center;
                 background: #f5f5f5 0% 0% no-repeat padding-box;
                 opacity: 1;
+                width: 1504px;
             }
 
             .products {
@@ -14,10 +15,12 @@
                 align-content: flex-start;
                 width: 1504px;
                 height: 918px;
-                padding: 10px;
+                padding: 1px;
                 border: 1px solid #E0E0E0;
                 border-radius: 1px;
-                overflow-y: hidden;
+                scroll-behavior: smooth;
+                overflow: hidden;
+                overflow-y: scroll;
             }
         </style>
 

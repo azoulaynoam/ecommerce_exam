@@ -16,6 +16,8 @@
                 border-left: 1px solid #E0E0E0;
                 background-color: #ffffff;
                 scroll-behavior: smooth;
+                overflow-x: hidden;
+                overflow-y: visible;
             }
         </style>
 

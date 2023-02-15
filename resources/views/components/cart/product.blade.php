@@ -175,7 +175,9 @@
                     "quantity": quantity
                 })
             })
-            .then((response) => {})
+            .then((response) => {
+                location.reload()
+            })
             .catch((error) => {})
     }
 
