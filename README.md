@@ -13,7 +13,7 @@ Must say that I had really great time, was really nice to write in PHP and getti
  - Run "php artisan migrate" to migrate with the database
  
  ### Routes:
-    - Home Route: /
-    - File import for products: /import
+    - Home: /
+    - Excel Import: /import
  
  Thank you very much for your time :D
